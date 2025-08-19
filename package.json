@@ -1,0 +1,28 @@
+{
+  "name": "resonate-browser-demo",
+  "version": "1.0.0",
+  "description": "Browser demo for Resonate TypeScript SDK with factorial example",
+  "main": "public/browser.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/worker.ts --bundle --format=esm --outfile=public/worker.js",
+    "serve": "npx serve public",
+    "dev": "npm run build && npx serve public"
+  },
+  "dependencies": {
+    "@resonatehq/sdk": "^0.0.0-SNAPSHOT-8faeb5c526801bec354c65ab7e8971493a9bac79"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "resonatehq",
+    "typescript",
+    "distributed",
+    "async",
+    "await"
+  ],
+  "author": "Resonate HQ, Inc",
+  "license": "MIT"
+}

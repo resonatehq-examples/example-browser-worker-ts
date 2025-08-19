@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+out/
+dist/
+docs/
+coverage/
+.next/
+bun.lock
+public/*.js
+*.log

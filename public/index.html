@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resonate Browser Worker - Factorial</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+        />
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="box">
+                    <h1 class="title">Resonate Browser Worker</h1>
+                    <p class="subtitle">
+                        This browser tab is a worker waiting for tasks. When the
+                        server sends work, this tab springs to action, runs the
+                        code, and sends back the results.
+                    </p>
+                </div>
+                <div class="box">
+                    <h2 class="title is-4">Factorial Execution Log</h2>
+                    <div class="table-container">
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Function Call</th>
+                                </tr>
+                            </thead>
+                            <tbody id="execution-log"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script type="module" src="worker.js"></script>
+    </body>
+</html>
