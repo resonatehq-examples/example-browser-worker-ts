@@ -26,7 +26,7 @@ function* factorial(ctx: Context, i: number): Generator<any, number, any> {
 }
 
 async function main() {
-  const resonate = Resonate.remote({});
+  const resonate = new Resonate({});
   resonate.register("factorial", factorial);
 }
 
