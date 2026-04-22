@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="./assets/banner.png" alt="Browser Worker — Resonate example" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.png">
+    <img alt="Browser Worker — Resonate example" src="./assets/banner-dark.png">
+  </picture>
 </p>
 
 # Resonate Workers in the Browser
