@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.png" alt="Browser Worker — Resonate example" />
+</p>
+
 # Resonate Workers in the Browser
 
 ** Currently only works in chrome **
