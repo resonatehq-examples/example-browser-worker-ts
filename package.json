@@ -10,7 +10,7 @@
     "dev": "npm run build && npx serve public"
   },
   "dependencies": {
-    "@resonatehq/sdk": "^0.0.0-SNAPSHOT-8faeb5c526801bec354c65ab7e8971493a9bac79"
+    "@resonatehq/sdk": "^0.10.0"
   },
   "devDependencies": {
     "esbuild": "^0.25.0",
