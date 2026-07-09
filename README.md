@@ -31,7 +31,7 @@ brew install resonatehq/tap/resonate
 Start the Resonate Server without persistence and with CORS enabled:
 
 ```bash
-resonate serve --aio-store-sqlite-path :memory: --api-http-cors-allow-origin "*" --aio-sender-plugin-poll-cors-allow-origin "*"
+resonate serve --storage-sqlite-path :memory: --server-cors-allow-origin "*"
 ```
 
 ### 2. Start the Resonate Wroker(s)
@@ -45,11 +45,7 @@ npm run dev
 Create a durable promise representing the durable invocation of factorial(5)
 
 ```bash
-resonate promises create factorial.5 \
-  --idempotency-key factorial.5 \
-  --timeout 1h \
-  --data '{"func":"factorial","args":[5]}' \
-  --tag resonate:invoke=poll://any@default
+resonate invoke factorial.5 --func factorial --arg 5  --target poll://any@default
 ```
 
 Fetch the result

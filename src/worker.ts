@@ -17,16 +17,22 @@ function addExecutionStep(functionCall: string, status: string = "executing") {
 function* factorial(ctx: Context, i: number): Generator<any, number, any> {
   addExecutionStep(`factorial(${i})`, "micro restart");
   console.log(`factorial(${i}) micro restart`);
-  if (i == 0) {
+  if (i === 0) {
     return 1;
   } else {
     //return i * (yield* ctx.run(factorial, i - 1));
-    return i * (yield* ctx.rpc("factorial", i - 1));
+    return i * (yield* ctx.rpc<number>("factorial", i - 1));
   }
 }
 
+// Resonate server URL. Without this the browser falls back to an in-memory
+// LocalNetwork and never connects to the server, so it would never receive the
+// poll://any@default invocation created via the CLI. Override with ?url=... in
+// the address bar to point at a different server.
+const RESONATE_URL = new URLSearchParams(globalThis.location?.search).get("url") ?? "http://localhost:8001";
+
 async function main() {
-  const resonate = new Resonate({});
+  const resonate = new Resonate({ url: RESONATE_URL });
   resonate.register("factorial", factorial);
 }
 
